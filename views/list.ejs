@@ -16,12 +16,12 @@
             </div>
             <div class="buttons">
                 <form method="post" action="/update/<%= tasks[i]._id %>">
-                    <button class="button_list" type="submit" style="background-color: #99d889;" name="action">
+                    <button class="button_list modify" type="submit" name="action">
                         <img src="/images/pencil_mark.svg" class="image">
                     </button>
                 </form>
                 <form method="post" action="/delete/<%= tasks[i]._id %>">
-                    <button class="button_list" type="submit" style="background-color: #dc6b6b;" name="action">
+                    <button class="button_list delete" type="submit" name="action">
                         <img src="/images/delete_mark.svg" class="image">
                     </button>
                 </form>

@@ -106,3 +106,19 @@ form{
 button:hover{
     cursor:pointer;
 }
+
+.modify{
+    background-color: #99d889;
+}
+
+.modify:hover{
+    background-color: #d1f5c8;
+}
+
+.delete{
+    background-color: #dc6b6b;
+}
+
+.delete:hover{
+    background-color: #eca4a4;
+}
