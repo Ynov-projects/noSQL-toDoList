@@ -1,0 +1,33 @@
+<html>
+<body>
+<link rel="stylesheet" href="/main.css" type="text/css"/>
+    <div class="tasks">
+    <form class="form" method="post" action="/form" style="width: 45%; margin: 2%;">
+        <button class="add_task" type="submit" name="action">
+            <img src="/images/adding_mark.svg" class="image">
+        </button>
+    </form>
+    <% for (let i = 0; i < tasks.length; i++) { %>
+        <div class="task">
+            <div class="task_title">
+                <h2><%= tasks[i].name %></h2>
+                </br>
+                <h3><%= tasks[i].desc %></h3>
+            </div>
+            <div class="buttons">
+                <form method="post" action="/update/<%= tasks[i]._id %>">
+                    <button class="button_list" type="submit" style="background-color: #99d889;" name="action">
+                        <img src="/images/pencil_mark.svg" class="image">
+                    </button>
+                </form>
+                <form method="post" action="/delete/<%= tasks[i]._id %>">
+                    <button class="button_list" type="submit" style="background-color: #dc6b6b;" name="action">
+                        <img src="/images/delete_mark.svg" class="image">
+                    </button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+    </div>
+</body>
+</html>

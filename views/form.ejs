@@ -1,0 +1,32 @@
+<html>
+<body>
+<link rel="stylesheet" href="/main.css" type="text/css"/>
+<div class="form">
+    <form method="post" action="/">
+        <button class="button_list" type="submit" name="action">
+            <img src="/images/return.svg" class="image">
+        </button>
+    </form>
+    <form method="post" action="/post">
+        <h1>Formulaire</h1>
+        <h3>Nom tâche</h3>
+        <% if(task){ %>
+            <input class="text-input" type="text" name="name" value="<%= task.name %>">
+            <h3>Description</h3>
+            <input class="text-input" type="text" name="desc" value="<%= task.desc %>">
+            <input type="hidden" name="id" value="<%= task._id %>">
+        <% }else{ %>
+            <input class="text-input" type="text" name="name">
+            <h3>Description</h3>
+            <input class="text-input" type="text" name="desc">
+        <% } %>
+        <div class="send_form">
+            <button class="button_list button_send" type="submit" name="action">
+                <h4>ENVOYER LE FORMULAIRE</h4>
+                <img src="/images/send_mark.svg" class="image">
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
