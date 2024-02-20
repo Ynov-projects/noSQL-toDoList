@@ -53,7 +53,7 @@ app.post("/post", async function (req, res) {
 });
 
 // On affiche le formulaire (rempli si un id de tâche est passé en paramètre)
-app.post("/form", async function (req, res) {
+app.post("/form",function (req, res) {
     const task = false;
     res.render('form', {task});
 });
@@ -68,12 +68,10 @@ app.post("/update/:taskID", async function (req, res) {
 app.post("/delete/:taskID", async function (req, res) {
     await Task.deleteOne({ _id: req.params.taskID });
     res.redirect('/');
-    // const tasks = await Task.find();
-    // res.render('list', {tasks});
 });
 
 // Affichage en liste des tâches (stylisé par mes soins)
-app.post('/', async function (req, res) {
+app.get('/', async function (req, res) {
     try {
         const tasks = await Task.find();
         res.render('list', {tasks});
